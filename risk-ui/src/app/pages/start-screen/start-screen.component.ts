@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RiskServService } from 'src/app/core/risk-serv.service';
 
 @Component({
   selector: 'app-start-screen',
@@ -8,17 +9,18 @@ import { Router } from '@angular/router';
 })
 export class StartScreenComponent implements OnInit {
   router: Router;
+  riskService: RiskServService;
 
-  constructor(router: Router) { 
+  constructor(router: Router, riskService: RiskServService) { 
     this.router = router;
+    this.riskService = riskService;
   }
 
   ngOnInit() {
   }
 
   joinRoom(roomCode: string, pass: string) {
-    console.log(roomCode)
-    console.log(pass);
+    this.riskService.setCode(roomCode, pass);
     this.router.navigate(['/info']);
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RiskServService } from 'src/app/core/risk-serv.service';
 
 @Component({
   selector: 'app-game-info',
@@ -8,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class GameInfoComponent implements OnInit {
   router: Router;
+  riskService: RiskServService;
 
-  constructor(router: Router) { 
+  constructor(router: Router, riskService: RiskServService) { 
     this.router = router;
+    this.riskService = riskService;
   }
 
   ngOnInit() {
