@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Player Info</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field style="margin-right: 15px">
+            <input matInput placeholder="Enter Your Name" />
+        </mat-form-field>
+        <button mat-raised-button color="primary">Enter</button>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Current Players</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+
+<button id="startBtn" mat-raised-button color="primary" (click)="startGame()">Start Game</button>

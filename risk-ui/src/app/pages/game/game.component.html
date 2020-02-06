@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Status</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem"><span style="margin-right: 20px;">Turn #{{turn_num}},</span><span style="margin-right: 20px;">Player: {{curr_player}}</span>Selected Country: {{s_country}}</mat-list-item>
+            <mat-list-item role="listitem"><span style="margin-right: 20px;">Attacking Country: {{a_country}},</span> Defending Country: {{d_country}}</mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+<div style="width: 75%; height: 75%; margin: auto">
+    <app-map ></app-map>
+</div>
+
+<span class="badgeCopy" matBadge="0" matBadgeOverlap="false" style="display: none; z-index: 10; position:absolute;"></span>

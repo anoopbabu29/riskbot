@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Enter Game Room</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="Enter Room Code" #roomCode/>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Enter Password" #pass/>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="joinRoom(roomCode.value, pass.value)">Enter</button>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Description</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Open Source Game of Risk</p>
+    </mat-card-content>
+</mat-card>
