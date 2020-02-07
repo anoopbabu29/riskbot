@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "src/dist/risk-ui",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html",
+        "run": {
+          "serviceId": "riskbot"
+        }
+      }
+    ]
+  }
+}

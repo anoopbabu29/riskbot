@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && cp -a ./dist/. ../risk-logic/dist/",
+    "build": "ng build && cp -a ./dist/. ../risk-logic/server/dist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
