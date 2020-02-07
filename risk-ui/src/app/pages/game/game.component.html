@@ -10,7 +10,8 @@
     </mat-card-content>
 </mat-card>
 <div style="width: 75%; height: 75%; margin: auto">
-    <app-map ></app-map>
+    <app-map [map_status]="map_status" (s_state)="sel_state($event)" (c_state)="clicked_state($event)"></app-map>
 </div>
 
 <span class="badgeCopy" matBadge="0" matBadgeOverlap="false" style="display: none; z-index: 10; position:absolute;"></span>
+<span class="badgeCopy2" matBadge="0" matBadgeColor="warn" matBadgeOverlap="false" style="display: none; z-index: 10; position:absolute;"></span>

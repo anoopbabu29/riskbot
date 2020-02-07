@@ -4,6 +4,10 @@
     </mat-card-header>
     <mat-card-content>
         <mat-form-field>
+            <input matInput placeholder="Enter Player Name" #user/>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
             <input matInput placeholder="Enter Room Code" #roomCode/>
         </mat-form-field>
         <br>
@@ -11,7 +15,8 @@
             <input matInput type="password" placeholder="Enter Password" #pass/>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="joinRoom(roomCode.value, pass.value)">Enter</button>
+        <button mat-raised-button color="primary" (click)="joinRoom(user.value, roomCode.value, pass.value, roomCode.value == roomCode.value)">Create Room</button>
+        <button mat-raised-button color="primary" (click)="joinRoom(user.value, roomCode.value, pass.value, roomCode.value != roomCode.value)">Join Room</button>
     </mat-card-content>
 </mat-card>
 
