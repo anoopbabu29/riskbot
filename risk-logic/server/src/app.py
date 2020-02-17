@@ -33,7 +33,7 @@ ROOM MANAGEMENT
 # Admin Creates the room
 @socketio.on('create_room')
 def on_create_room(data: Dict[str, Any]):
-    room: str = f'{data["roomCode"]}{data["pass"]}'
+    room: str = f'{data["roomCode"]}_{data["pass"]}'
     print(room)
 
 
@@ -41,7 +41,7 @@ def on_create_room(data: Dict[str, Any]):
 @socketio.on('req_room')
 def on_req(data: Dict[str, Any]):
     print(data)
-    room: str = f'{data["roomCode"]}{data["pass"]}'
+    room: str = f'{data["roomCode"]}_{data["pass"]}'
 
     print(room)
     print(f'new_player_admin_{room}')
@@ -52,7 +52,7 @@ def on_req(data: Dict[str, Any]):
 # Admin checks whether the room is open or closed
 @socketio.on('check_room')
 def on_update(data: Dict[str, Any]):
-    room: str = f'{data["roomCode"]}{data["pass"]}'
+    room: str = f'{data["roomCode"]}_{data["pass"]}'
     can_join: bool = data['has_started']
 
     print(can_join)
@@ -64,7 +64,7 @@ def on_update(data: Dict[str, Any]):
 # Requect player info from Admin
 @socketio.on('req_playerInfo')
 def req_plinfo(data: Dict[str, Any]):
-    room: str = f'{data["roomCode"]}{data["pass"]}'
+    room: str = f'{data["roomCode"]}_{data["pass"]}'
     
     emit(f'upd_pl_rm_admin_{room}', None, broadcast=True)
 
@@ -72,7 +72,7 @@ def req_plinfo(data: Dict[str, Any]):
 # Admin sends everyone the updated list
 @socketio.on('update_room')
 def update_room(data: Dict[str, Any]):
-    room: str = f'{data["roomCode"]}{data["pass"]}'
+    room: str = f'{data["roomCode"]}_{data["pass"]}'
     player_list: List[str] = data['players']
 
     emit(f'update_list_{room}', {"players": player_list}, json=True, broadcast=True)
@@ -81,7 +81,7 @@ def update_room(data: Dict[str, Any]):
 # Leave Room
 @socketio.on('leave_room')
 def on_leave(data: Dict[str, Any]):
-    room: str = f'{data["roomCode"]}{data["pass"]}'
+    room: str = f'{data["roomCode"]}_{data["pass"]}'
 
     emit(f'left_room_{room}', None)
 
